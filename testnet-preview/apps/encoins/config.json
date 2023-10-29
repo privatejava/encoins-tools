@@ -8,5 +8,5 @@
 , "network_id"          : {"tag" : "Testnet", "contents" : 2}
 , "collateral"          : {"txOutRefId" : {"getTxId" : ""}, "txOutRefIdx" : 0}
 , "chain_index"         : "Kupo"
-, "active_endpoints"    : ["ping", "submitTx", "newTx"]
+, "active_endpoints"    : ["ping", "utxos", "submitTx", "newTx", "serverTx", "status", "version"]
 }
