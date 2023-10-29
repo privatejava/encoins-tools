@@ -96,7 +96,7 @@ mv bin/kupo "$HOME/.local/bin/"
 
 ```bash
 cd $CARDANO_SRC_PATH
-wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1/encoins
+wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1.2.0/encoins
 mv encoins "$HOME/.local/bin/"
 ```
 

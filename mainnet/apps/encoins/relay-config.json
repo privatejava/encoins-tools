@@ -5,7 +5,7 @@
 , "verifier_port"               : 0
 , "delegation_folder"           : "delegations"
 , "delegation_min_token_amt"    : 0
-, "delegation_start"            : {"getSlot" : 87099336}
+, "delegation_start"            : {"getSlot" : 106866682}
 , "delegation_currency_symbol"  : {"unCurrencySymbol" : "9abf0afd2f236a19f2842d502d0450cbcd9c79f123a9708f96fd9b96"}
 , "delegation_token_name"       : {"unTokenName" : "ENCS"}
 }

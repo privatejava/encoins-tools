@@ -5,6 +5,7 @@ testnet-preview/apps/encoins/blockfrost.token
 testnet-preview/apps/encoins/secrets/*
 testnet-preview/apps/encoins/poll*files/*
 testnet-preview/apps/encoins/savedResponses/*
+testnet-preview/apps/encoins/delegations/*
 testnet-preview/apps/*/logs/*
 testnet-preview/apps/verifier/verifierPrvKey.json
 testnet-preview/data/
@@ -15,9 +16,10 @@ testnet-preview/wallets/*
 testnet-preprod/apps/cardano-node/node.sock
 testnet-preprod/apps/encoins/blockfrost.token
 testnet-preprod/apps/encoins/secrets/*
-testnet-preprod/apps/*/logs/*
 testnet-preprod/apps/encoins/poll*files/*
 testnet-preprod/apps/encoins/savedResponses/*
+testnet-preprod/apps/encoins/delegations/*
+testnet-preprod/apps/*/logs/*
 testnet-preprod/apps/verifier/verifierPrvKey.json
 testnet-preprod/data/
 testnet-preprod/wallets/*
@@ -29,6 +31,7 @@ mainnet/apps/encoins/blockfrost.token
 mainnet/apps/encoins/secrets/*
 mainnet/apps/encoins/poll*files/*
 mainnet/apps/encoins/savedResponses/*
+mainnet/apps/encoins/delegations/*
 mainnet/apps/*/logs/*
 mainnet/apps/verifier/verifierPrvKey.json
 mainnet/data/
