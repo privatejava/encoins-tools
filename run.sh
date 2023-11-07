@@ -29,6 +29,6 @@ tmux send-keys -t $session:$window "tmux kill-pane -t 4" C-m ENTER;
 cd ../apps/encoins
 tmux select-pane -t 0
 tmux send-keys -t $session:$window "cd ../apps/encoins" C-m ENTER;
-tmux send-keys -t $session:$window "encoins run";
+tmux send-keys -t $session:$window "encoins --run";
 
 tmux attach -t $session;
