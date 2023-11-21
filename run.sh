@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd testnet-preprod/scripts
+cd mainnet/scripts
 session="encoins-relay";
 tmux new-session -d -s $session;
 window=0;
