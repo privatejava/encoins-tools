@@ -1,5 +1,6 @@
 { "host"                       : "localhost"
 , "port"                       : 3002
+, "hyper_text_protocol"        : {"tag" : "HTTP"}
 , "network_id"                 : {"tag" : "Mainnet"}
 , "delegation_currency_symbol" : {"unCurrencySymbol" : "9abf0afd2f236a19f2842d502d0450cbcd9c79f123a9708f96fd9b96"}
 , "delegation_token_name"      : {"unTokenName" : "ENCS"}

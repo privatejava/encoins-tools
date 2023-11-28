@@ -1,5 +1,6 @@
 { "host"                     : "localhost"
 , "port"                     : 3000
+, "hyper_text_protocol"      : {"tag" : "HTTP"}
 , "min_utxos_number"         : 1
 , "max_utxos_number"         : 10
 , "node_file_path"           : "../cardano-node/node.sock"
