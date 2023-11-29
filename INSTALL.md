@@ -136,15 +136,17 @@ tmux attach -t $session;
 tmux kill-session -t encoins-relay
 ```
 
-14. Create a Cardano wallet for your relayer. You can use any browser wallet interface to do so. Go to ```mainnet/wallets``` directory and edit the mnemonic phrase in ```wallet-example.json``` file to your wallet mnemonics. Save as "wallet.json".
+14. Create a Cardano wallet for your relayer. You can use any browser wallet interface to do so. Go to ```mainnet/wallets``` folder and edit the mnemonic phrase in ```wallet-example.json``` file to your wallet mnemonics. Save as "wallet.json".
 ```bash 
 cd $ENCOINS_TOOLS_PATH/mainnet/wallets
 nano wallet.json
 ```
 
-15. Deposit 20-30 tADA into your backend wallet address.
+15. Add your relay's IP or URL to the config file. Go to ```mainnet/apps/encoins``` folder and edit ```relay-config.json``` file by changing the `delegation_ip` field to something like `http://1.2.3.4` (insert your relay's IP).
 
-16. Make sure to open port 3000 on your relay machine. You will not be able to receive user requests otherwise.
+16. Deposit 20-30 tADA into your backend wallet address.
+
+17. Make sure to open port 3000 on your relay machine. You will not be able to receive user requests otherwise.
 
 Now you are ready to run the ENCOINS Relay!
 
