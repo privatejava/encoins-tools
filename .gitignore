@@ -15,6 +15,8 @@ testnet-preview/wallets/*
 
 testnet-preprod/apps/cardano-node/node.sock
 testnet-preprod/apps/encoins/blockfrost.token
+testnet-preprod/apps/encoins/maestro.token
+testnet-preprod/apps/encoins/debts.json
 testnet-preprod/apps/encoins/secrets/*
 testnet-preprod/apps/encoins/poll*files/*
 testnet-preprod/apps/encoins/savedResponses/*
@@ -28,6 +30,8 @@ testnet-preprod/wallets/*
 
 mainnet/apps/cardano-node/node.sock
 mainnet/apps/encoins/blockfrost.token
+mainnet/apps/encoins/maestro.token
+mainnet/apps/encoins/debts.json
 mainnet/apps/encoins/secrets/*
 mainnet/apps/encoins/poll*files/*
 mainnet/apps/encoins/savedResponses/*
