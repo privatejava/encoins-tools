@@ -2,6 +2,7 @@
 
 testnet-preview/apps/cardano-node/node.sock
 testnet-preview/apps/encoins/blockfrost.token
+testnet-preview/apps/encoins/maestro.token
 testnet-preview/apps/encoins/secrets/*
 testnet-preview/apps/encoins/poll*files/*
 testnet-preview/apps/encoins/savedResponses/*
