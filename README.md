@@ -25,6 +25,8 @@ In order to setup all the necessary applications for encoins-relay, consult the 
 
 IMPORTANT: it is strongly recommended not to store large amounts of crypto in such backend wallets.
 
-## encs
+## Data providers
+To use an external data provider, you nee the corresponding token. External data providers are not yet available for the `encoins-relay` app.
 
-* Verifying distribution results requires a Blockfrost token to run. You can get a free token at by registering at https://blockfrost.io/. Write you token in quotes in the "blockfrost.token" file inside "mainnet/apps/encs" folder (see "blockfrost.token.example" there).
+* You can get a free Blockfrost token by registering at https://blockfrost.io/. Write you token in quotes in the "blockfrost.token" file inside "mainnet/apps/encoins" folder (see "blockfrost.token.example" there).
+* You can get a free Maestro token by registering at https://gomaestro.org/. Write you token in quotes in the "maestro.token" file inside "mainnet/apps/encoins" folder (see "maestro.token.example" there).
