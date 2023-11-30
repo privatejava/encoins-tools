@@ -1,6 +1,6 @@
-# Encoins-relay installation guide
+# ENCOINS Relay installation guide
 
-This guide is written for a clean Ubuntu 22.04.3 LTS (minimal installation option). To install the relayer on another OS, you might need to make some adjustments.
+This guide is written for a clean Ubuntu 22.04.3 LTS (minimal installation option). To install the relay on another OS, you might need to make some adjustments. Steps 1-7 repeat the steps necessary for running a Cardano node.
 
 1. Add ```.local/bin``` folder to path:
 
@@ -73,10 +73,11 @@ sudo  make install
 cd $CARDANO_SRC_PATH
 mkdir -p "cardano-wallet"
 cd cardano-wallet
-wget https://github.com/cardano-foundation/cardano-wallet/releases/download/v2023-04-14/cardano-wallet-v2023-04-14-linux64.tar.gz
-tar -xvzf cardano-wallet-v2023-04-14-linux64.tar.gz
-mv cardano-wallet-v2023-04-14-linux64/cardano-wallet "$HOME/.local/bin/"
-wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1/cardano-node
+wget https://github.com/cardano-foundation/cardano-wallet/releases/download/v2023-07-18/cardano-wallet-v2023-07-18-linux64.tar.gz
+tar -xvzf cardano-wallet-v2023-07-18-linux64.tar.gz
+mv cardano-wallet-v2023-07-18-linux64/cardano-wallet "$HOME/.local/bin/"
+wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1.2.1/cardano-node
+chmod +x cardano-node
 mv cardano-node "$HOME/.local/bin/"
 ```
 
@@ -86,8 +87,8 @@ mv cardano-node "$HOME/.local/bin/"
 cd $CARDANO_SRC_PATH
 mkdir -p "kupo"
 cd kupo
-wget https://github.com/CardanoSolutions/kupo/releases/download/v2.6/kupo-2.6.1-amd64-Linux.tar.gz
-tar -xvzf kupo-2.6.1-amd64-Linux.tar.gz
+wget https://github.com/CardanoSolutions/kupo/releases/download/v2.7/kupo-2.7.0-amd64-Linux.tar.gz
+tar -xvzf kupo-2.7.0-amd64-Linux.tar.gz
 chmod +x bin/kupo
 mv bin/kupo "$HOME/.local/bin/"
 ```
@@ -96,7 +97,8 @@ mv bin/kupo "$HOME/.local/bin/"
 
 ```bash
 cd $CARDANO_SRC_PATH
-wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1.2.0/encoins
+wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1.2.1/encoins
+chmod +x encoins
 mv encoins "$HOME/.local/bin/"
 ```
 
@@ -113,16 +115,18 @@ git clone https://github.com/encryptedcoins/encoins-tools.git
 export ENCOINS_TOOLS_PATH=~/encoins-tools
 ```
 
+NOTE: you can update `encoins-tools` to the latest version by running `git pull`.
+
 12. Start cardano-node and Kupo synchronization:
 ```bash
 cd $ENCOINS_TOOLS_PATH
 session="encoins-relay";
 tmux new-session -d -s $session;
 window=0;
-tmux send-keys -t $session:$window "cd testnet-preprod/scripts/" C-m ENTER;
+tmux send-keys -t $session:$window "cd mainnet/scripts/" C-m ENTER;
 tmux send-keys -t $session:$window "./node.sh" C-m ENTER;
 tmux split-window -v;
-tmux send-keys -t $session:$window "cd testnet-preprod/scripts/" C-m ENTER;
+tmux send-keys -t $session:$window "cd mainnet/scripts/" C-m ENTER;
 tmux send-keys -t $session:$window "./kupo.sh" C-m ENTER;
 tmux attach -t $session;
 ```
@@ -132,17 +136,17 @@ tmux attach -t $session;
 tmux kill-session -t encoins-relay
 ```
 
-14. Create a Cardano wallet for your relayer. You can use any browser wallet interface to do so. Go to ```testnet-preprod/wallets``` directory and edit the mnemonic phrase in ```wallet-example.json``` file to your wallet mnemonics. Save as "wallet.json".
+14. Create a Cardano wallet for your relayer. You can use any browser wallet interface to do so. Go to ```mainnet/wallets``` directory and edit the mnemonic phrase in ```wallet-example.json``` file to your wallet mnemonics. Save as "wallet.json".
 ```bash 
-cd $ENCOINS_TOOLS_PATH/testnet-preprod/wallets
+cd $ENCOINS_TOOLS_PATH/mainnet/wallets
 nano wallet.json
 ```
 
 15. Deposit 20-30 tADA into your backend wallet address.
 
-16. Make sure to open port 3000 on your relayer machine. You will not be able to receive user requests otherwise.
+16. Make sure to open port 3000 on your relay machine. You will not be able to receive user requests otherwise.
 
-Now you are ready to run the ENCOINS Relayer!
+Now you are ready to run the ENCOINS Relay!
 
 Consult the [RUN.md](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md) guide next.
 

@@ -2,13 +2,13 @@
 A suite of scripts and config files to run the ENCOINS backend applications.
 
 # Installation
-In order to setup all the necessary applications for encoins-relay, consult the installation guide [here](https://github.com/encryptedcoins/encoins-tools/blob/main/INSTALL.md). The guide has been tested on a clean Ubuntu 22.04.3 LTS with the mininimal installation option.
+In order to set up all the necessary applications for the ENCOINS relay, consult the installation guide [here](https://github.com/encryptedcoins/encoins-tools/blob/main/INSTALL.md). The guide has been tested on a clean Ubuntu 22.04.3 LTS with the minimal installation option.
 
 # Run
 * Make changes to the config files if necessary.
 * [Add your wallet](https://github.com/encryptedcoins/encoins-tools#cardano-wallet)
 * Launch the [run.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/run.sh) script or use the guide [here](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md).
-* After executing ```encoins run```, make sure that port 3000 is accessible from the outside. You can test port accessibility [here](https://www.yougetsignal.com/tools/open-ports/).
+* After executing ```encoins --run```, make sure that port 3000 is accessible from the outside. You can test port accessibility [here](https://www.yougetsignal.com/tools/open-ports/).
 
 # Notes
 
@@ -25,6 +25,8 @@ In order to setup all the necessary applications for encoins-relay, consult the 
 
 IMPORTANT: it is strongly recommended not to store large amounts of crypto in such backend wallets.
 
-## encs
+## Data providers
+To use an external data provider, you need the corresponding token. External data providers are not yet available for the `encoins` app.
 
-* Verifying distribution results requires a Blockfrost token to run. You can get a free token at by registering at https://blockfrost.io/. Write you token in quotes in the "blockfrost.token" file inside "mainnet/apps/encs" folder (see "blockfrost.token.example" there).
+* You can get a free Blockfrost token by registering at https://blockfrost.io/. Write your token in quotes in the "blockfrost.token" file inside "mainnet/apps/encoins" folder (see "blockfrost.token.example" there).
+* You can get a free Maestro token by registering at https://gomaestro.org/. Write your token in quotes in the "maestro.token" file inside "mainnet/apps/encoins" folder (see "maestro.token.example" there).
