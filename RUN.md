@@ -1,4 +1,4 @@
-# Encoins-relay run guide
+# ENCOINS Relay run guide
 
 Assuming you followed the installation guide, all the necessary backend apps should be installed and on PATH. Make an environment variable for the encoins-tools folder:
 ```bash
@@ -6,6 +6,14 @@ export ENCOINS_TOOLS_PATH=~/encoins-tools
 ```
 
 IMPORTANT: Make sure to open port 3000 on your relayer machine. You will not be able to receive user requests otherwise.
+
+## Running with a single bash command
+
+1. Move to the encoins-tools folder and execute ```run.sh```.
+
+2. Wait until cardano-wallet is fully [synchronized](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md#When-is-cardano-wallet-fully-synchronized?).
+
+3. Press enter.
 
 ## Running with tmux
 
@@ -66,14 +74,6 @@ encoins run
 tmux kill-session -t encoins-relay
 ```
 
-## Running with a single bash command
-
-1. Move to the encoins-tools folder and execute ```run.sh```.
-
-2. Wait until cardano-wallet is fully [synchronized](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md#When-is-cardano-wallet-fully-synchronized?).
-
-3. Press enter.
-
 ## When is cardano-wallet fully synchronized?
 
 When you see message like this:
@@ -81,4 +81,3 @@ When you see message like this:
 ```code
 [cardano-wallet.wallet-engine:Notice:42] [current-time]: In sync! Applied n blocks...
 ```
-
