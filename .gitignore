@@ -48,3 +48,5 @@ mainnet/wallets/*
 !mainnet/wallets/wallet-example.json
 !mainnet/wallets/load_wallet.sh
 
+
+docker/data
