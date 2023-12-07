@@ -7,6 +7,6 @@
 , "delegation_folder"          : "delegations"
 , "frequency"                  : 10
 , "max_delay"                  : 300
-, "min_token_number"           : 100000
-, "reward_token_threshold"     : 100000
+, "min_token_number"           : 100000000000
+, "reward_token_threshold"     : 100000000000
 }
