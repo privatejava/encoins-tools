@@ -1,0 +1,28 @@
+{
+    "ref_stake_owner": {
+        "txOutRefId": {
+            "getTxId": "f86419f8eddc9971864f0fb5d990eeb1eb2edffd3b109a2fa0281f8daee4c248"
+        },
+        "txOutRefIdx": 0
+    },
+    "ref_beacon": {
+        "txOutRefId": {
+            "getTxId": "7c011f984f9e96b0de90fddd17fd29db8b0743796e82b33a1b0afa774d8b4d07"
+        },
+        "txOutRefIdx": 0
+    },
+    "verifier_pkh": "7F04730FC0F75A7D20BEB8CD152B2B8571591282EC8E5A3FC266C52049A3A5C6",
+    "verifier_host": "3.71.79.183",
+    "verifier_port": 3001,
+    "verifier_protocol": "HTTP",
+    "delegation_currency_symbol": {
+        "unCurrencySymbol": "9abf0afd2f236a19f2842d502d0450cbcd9c79f123a9708f96fd9b96"
+    },
+    "delegation_token_name": {
+        "unTokenName": "ENCS"
+    },
+    "delegation_server_host": "3.67.180.227",
+    "delegation_server_port": 3002,
+    "delegation_server_protocol": "HTTP",
+    "delegation_ip": "<your relay's IP or URL>"
+}
