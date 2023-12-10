@@ -1,0 +1,7 @@
+*
+!docker/config
+!docker/*.sh
+!docker/*.Dockerfile
+!mainnet/
+!testnet-preview/
+!testnet-preprod/

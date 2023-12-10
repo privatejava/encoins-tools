@@ -1,0 +1,115 @@
+version: "3.7"
+
+services:
+  node:
+    container_name: cardano-node-${NETWORK}
+    network_mode: host
+    image: inputoutput/cardano-node:${NODE_VERSION}
+    environment:
+      NETWORK: ${NETWORK}
+      CARDANO_NODE_SOCKET_PATH: /ipc/node.socket
+    volumes:
+      - ./docker/data/cardano-node/${NETWORK}/db:/data/db
+      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+    # ports:
+    #   - 12798:12798
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        compress: "true"
+        max-file: "10"
+        max-size: "50m"
+    healthcheck:
+      test: "cardano-cli query tip $([ $$NETWORK == \"mainnet\" ] && echo  \"--mainnet\" || echo \"--testnet-magic 1\")"
+      interval: 15s
+      retries: 10
+  
+  kupo:
+    container_name: kupo-${NETWORK}
+    depends_on: 
+      node:
+        condition: service_healthy
+    network_mode: host
+    image: cardanosolutions/kupo:${KUPO_VERSION}
+    volumes:
+      - ./docker/config/${NETWORK}/kupo:/config
+      - ./docker/data/kupo/${NETWORK}/db:/db
+      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+    command: 
+      - --node-socket
+      -  /ipc/node.socket
+      -  --node-config
+      -  /config/config.json
+      -  --since
+      -  ${KUPO_SINCE}
+      -  --match
+      -  "*"
+      -  --host
+      -  0.0.0.0
+      -  --workdir
+      -  /db
+    # ports:
+    #   - 1442:1442
+    restart: on-failure:10
+    logging:
+      driver: "json-file"
+      options:
+        compress: "true"
+        max-file: "10"
+        max-size: "50m"
+
+
+  wallet:
+    container_name: wallet-${NETWORK}
+    depends_on: 
+      node:
+        condition: service_healthy
+    image: cardanofoundation/cardano-wallet:${WALLET_VERSION}
+    network_mode: host
+    volumes:
+      - ./docker/data/wallet/${NETWORK}/db:/wallet-db
+      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+    # ports:
+    #   - 8090:8090
+    entrypoint: []
+    command: > 
+      bash -c "
+        ([[ $$NETWORK == \"mainnet\" ]] && $$CMD --mainnet) ||
+        ($$CMD --testnet /config/${NETWORK}/genesis-byron.json)
+      "
+    environment:
+      CMD: "cardano-wallet serve --node-socket /ipc/node.socket --database /db --listen-address 0.0.0.0"
+      NETWORK: ${NETWORK}
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        compress: "true"
+        max-file: "10"
+        max-size: "50m"
+
+  relay:
+    container_name: relay-${NETWORK}
+    depends_on: 
+      node:
+        condition: service_healthy
+    image: encoins-relay:local
+    build:
+      dockerfile: docker/relay.Dockerfile
+    network_mode: host
+    volumes:
+      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+      - ./docker/config/${NETWORK}/relay/wallet.json:/wallets/wallet.json
+      - ./docker/config/${NETWORK}/relay/relay-config.json:/config/relay-config.json
+      - ./docker/config/${NETWORK}/relay/config.json:/app/mainnet/apps/encoins/config.json
+    environment:
+      NETWORK: ${NETWORK}
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        compress: "true"
+        max-file: "10"
+        max-size: "50m"
+        
