@@ -30,3 +30,31 @@ To use an external data provider, you need the corresponding token. External dat
 
 * You can get a free Blockfrost token by registering at https://blockfrost.io/. Write your token in quotes in the "blockfrost.token" file inside "mainnet/apps/encoins" folder (see "blockfrost.token.example" there).
 * You can get a free Maestro token by registering at https://gomaestro.org/. Write your token in quotes in the "maestro.token" file inside "mainnet/apps/encoins" folder (see "maestro.token.example" there).
+
+
+## Run with Docker 
+Make sure you have `.env` file  with correct values
+
+All the configuration related to docker are inside `./docker/config`
+
+Make sure to edit these files 
+- [wallet.json](docker/config/mainnet/relay/wallet.json) with pattern of [wallet-example.json](mainnet/wallets/wallet-example.json)
+- [relay-config.json](docker/config/mainnet/relay/relay-config.json) with correct IP Address or domain for `delegation_ip`
+- `docker/data` directory is accessible and this will contain all the data , db and other configs. You can change this path from env `DATA_DIR`
+
+
+#### Build 
+```bash
+docker compose build
+```
+
+### Start
+```bash
+docker compose up -d
+```
+
+### Stop 
+```bash
+docker compose down
+```
+
