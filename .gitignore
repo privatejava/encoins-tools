@@ -21,7 +21,6 @@ testnet-preprod/apps/encoins/blockfrost.token
 testnet-preprod/apps/encoins/maestro.token
 testnet-preprod/apps/encoins/debts.json
 testnet-preprod/apps/encoins/delegationMap.json
-testnet-preprod/apps/encoins/delegationProxy/*
 testnet-preprod/apps/encoins/secrets/*
 testnet-preprod/apps/encoins/poll*files/*
 testnet-preprod/apps/encoins/savedResponses/*
@@ -29,6 +28,7 @@ testnet-preprod/apps/encoins/delegations/*
 testnet-preprod/apps/*/logs/*
 testnet-preprod/apps/verifier/verifierPrvKey.json
 testnet-preprod/data/
+testnet-preprod/scripts/delegationProxy/*
 testnet-preprod/wallets/*
 !testnet-preprod/wallets/wallet-example.json
 !testnet-preprod/wallets/load_wallet.sh
@@ -38,7 +38,6 @@ mainnet/apps/encoins/blockfrost.token
 mainnet/apps/encoins/maestro.token
 mainnet/apps/encoins/debts.json
 mainnet/apps/encoins/delegationMap.json
-mainnet/apps/encoins/delegationProxy/*
 mainnet/apps/encoins/secrets/*
 mainnet/apps/encoins/poll*files/*
 mainnet/apps/encoins/savedResponses/*
@@ -46,6 +45,7 @@ mainnet/apps/encoins/delegations/*
 mainnet/apps/*/logs/*
 mainnet/apps/verifier/verifierPrvKey.json
 mainnet/data/
+mainnet/scripts/delegationProxy/*
 mainnet/wallets/*
 !mainnet/wallets/wallet-example.json
 !mainnet/wallets/load_wallet.sh
