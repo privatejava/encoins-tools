@@ -28,7 +28,6 @@ testnet-preprod/apps/encoins/delegations/*
 testnet-preprod/apps/*/logs/*
 testnet-preprod/apps/verifier/verifierPrvKey.json
 testnet-preprod/data/
-testnet-preprod/scripts/delegationProxy/*
 testnet-preprod/wallets/*
 !testnet-preprod/wallets/wallet-example.json
 !testnet-preprod/wallets/load_wallet.sh
@@ -45,7 +44,6 @@ mainnet/apps/encoins/delegations/*
 mainnet/apps/*/logs/*
 mainnet/apps/verifier/verifierPrvKey.json
 mainnet/data/
-mainnet/scripts/delegationProxy/*
 mainnet/wallets/*
 !mainnet/wallets/wallet-example.json
 !mainnet/wallets/load_wallet.sh
