@@ -10,6 +10,15 @@ In order to set up all the necessary applications for the ENCOINS relay, consult
 * Launch the [run.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/run.sh) script or use the guide [here](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md).
 * After executing ```encoins --run```, make sure that port 3000 is accessible from the outside. You can test port accessibility [here](https://www.yougetsignal.com/tools/open-ports/).
 
+# Reward Distribution
+* Launch all necessary services by executing the [run.sh](https://github.com/encryptedcoins/encoins-tools/blob/main/run.sh) script or by using the guide [here](https://github.com/encryptedcoins/encoins-tools/blob/main/RUN.md).
+* Execute ```encoins --reward X``` to distribute X ada as rewards to your delegators.
+* Wait until the `encoins` app exits.
+
+How much ada you want to distribute and how much to keep for yourself is up to you!
+
+**About debts**: Upon completion, you will see `debts.json` file in the `mainnet/apps/encoins` folder. It records ada debts to delegators that are too small to distribute. If you have such delegators, you will distribute a little bit less than X ada. Next time you run ```encoins --reward```, it will also try to pay the existing debts, so make sure you have enough ada to also cover those.
+
 # Notes
 
 ## cardano-node
