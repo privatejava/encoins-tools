@@ -76,7 +76,7 @@
     "exposeHeaders" : [ "authorization", "content-type", "content-type: application/json", "date, x-api-id", "x-amz-date", "x-api-key", "x-requested-with" ],
     "maxAge" : 300,
     "allowCredentials" : false,
-    "allowOrigins" : [ "http://localhost:3333", "http://localhost:3333/", "https://app.encoins.io", "https://encoins.io", "https://orange-wave-6802.on.fleek.co/" ]
+    "allowOrigins" : [ "<HTTP_ADDRESS>:3333", "<HTTP_ADDRESS>:3333/", "https://app.encoins.io", "https://encoins.io", "https://orange-wave-6802.on.fleek.co/" ]
   },
   "x-amazon-apigateway-importexport-version" : "1.0"
 }
