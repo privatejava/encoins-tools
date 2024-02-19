@@ -3,8 +3,8 @@
 testnet-preview/apps/cardano-node/node.sock
 testnet-preview/apps/encoins/blockfrost.token
 testnet-preview/apps/encoins/maestro.token
-testnet-preprod/apps/encoins/debts.json
-testnet-preprod/apps/encoins/delegationMap.json
+testnet-preview/apps/encoins/debts.json
+testnet-preview/apps/encoins/delegationMap.json
 testnet-preview/apps/encoins/secrets/*
 testnet-preview/apps/encoins/poll*files/*
 testnet-preview/apps/encoins/savedResponses/*
