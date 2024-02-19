@@ -97,6 +97,8 @@ services:
     image: encoins-relay:local
     build:
       dockerfile: docker/relay.Dockerfile
+      args: 
+        ENCOINS_RELAY_VERSION: $ENCOINS_RELAY_VERSION
     network_mode: host
     volumes:
       - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
