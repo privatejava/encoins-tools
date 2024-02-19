@@ -9,8 +9,8 @@ services:
       NETWORK: ${NETWORK}
       CARDANO_NODE_SOCKET_PATH: /ipc/node.socket
     volumes:
-      - ./docker/data/cardano-node/${NETWORK}/db:/data/db
-      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+      - ${DATA_DIR}/cardano-node/${NETWORK}/db:/data/db
+      - ${DATA_DIR}/cardano-node/${NETWORK}/node-ipc:/ipc
     # ports:
     #   - 12798:12798
     restart: on-failure
@@ -34,8 +34,8 @@ services:
     image: cardanosolutions/kupo:${KUPO_VERSION}
     volumes:
       - ./docker/config/${NETWORK}/kupo:/config
-      - ./docker/data/kupo/${NETWORK}/db:/db
-      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+      - ${DATA_DIR}/kupo/${NETWORK}/db:/db
+      - ${DATA_DIR}/cardano-node/${NETWORK}/node-ipc:/ipc
     command: 
       - --node-socket
       -  /ipc/node.socket
@@ -68,8 +68,8 @@ services:
     image: cardanofoundation/cardano-wallet:${WALLET_VERSION}
     network_mode: host
     volumes:
-      - ./docker/data/wallet/${NETWORK}/db:/wallet-db
-      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+      - ${DATA_DIR}/wallet/${NETWORK}/db:/wallet-db
+      - ${DATA_DIR}/cardano-node/${NETWORK}/node-ipc:/ipc
     # ports:
     #   - 8090:8090
     entrypoint: []
@@ -101,7 +101,7 @@ services:
         ENCOINS_RELAY_VERSION: $ENCOINS_RELAY_VERSION
     network_mode: host
     volumes:
-      - ./docker/data/cardano-node/${NETWORK}/node-ipc:/ipc
+      - ${DATA_DIR}/cardano-node/${NETWORK}/node-ipc:/ipc
       - ./docker/config/${NETWORK}/relay/wallet.json:/wallets/wallet.json
       - ./docker/config/${NETWORK}/relay/relay-config.json:/config/relay-config.json
       - ./docker/config/${NETWORK}/relay/config.json:/app/mainnet/apps/encoins/config.json

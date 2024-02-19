@@ -50,3 +50,4 @@ mainnet/wallets/*
 
 
 docker/data
+.env
