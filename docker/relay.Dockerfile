@@ -37,7 +37,7 @@ RUN echo $CARDANO_SRC_PATH && \
 
 
 RUN cd $CARDANO_SRC_PATH && \
-    wget https://github.com/encryptedcoins/encoins-relay/releases/download/v1.2.1/encoins && \
+    wget https://github.com/encryptedcoins/encoins-relay/releases/download/${ENCOINS_RELAY_VERSION}/encoins && \
     mv encoins "$HOME/.local/bin/" && \
     rm -f -r $CARDANO_SRC_PATH && \
     cd ~ && \
